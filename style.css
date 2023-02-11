@@ -1,0 +1,36 @@
+label {
+    float: left;
+    width: 150px;
+}
+
+#container {
+    width: 1500px;
+    margin: auto;
+    background-color: beige;
+}
+
+main {
+    padding: 50px;
+}
+
+#myTable input {
+    margin-left: 5px;
+}
+
+#myTable {
+    
+    border: 2px solid green;
+    border-collapse: collapse;
+    margin: 5px 5px 5px 5px;
+}
+
+#myTable td,
+th {
+    border: 1px solid green;
+    padding: 5px;
+}
+
+#myTable th {
+    color: #fff;
+    background-color: #a7c942;
+}

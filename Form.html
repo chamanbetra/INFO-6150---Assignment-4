@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Feedback</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body onload="whenLoaded()">
+	<div id="container">
+
+		<main>
+			<h2>Feedback</h2>
+			<h3>Love something? Hate something? Let us know!</h3>
+			Note : Fields marked with an asterisk(*) are mandatory
+			<br><br>
+			<!--<form id="myform" method="post" novalidate>-->
+			<!--<form id="myform" onsubmit = "onSubmit_CreateTable()"></form>-->
+			<form id="myform" onsubmit="onSubmit_Check(); return false;">
+				<label>Title*:</label>
+				<input type="radio" name="title" id="miss" value="Miss."  />Miss.
+				<input type="radio" name="title" id="mr" value="Mr."  />Mr.
+				<input type="radio" name="title" id="mrs" value="Mrs."  />Mrs.
+				<br><br>
+				<div id="error_title" style="display: none; color: red;">
+					Please select one of the above 3 options
+					<br><br>
+				</div>
+
+				<label for="firstName">First Name*:</label>
+				<input type="text" name="firstName" id="firstName" placeholder="First Name" required="required"/>
+				<br><br>
+
+				<div id="error_firstName" style="display: none; color: red;">
+					Invalid input for the First Name field. Only text are allowed.
+					<br><br>
+				</div>
+
+				<label for="lastName">Last Name*:</label>
+				<input type="text" name="lastName" id="lastName" placeholder="Last Name" required="required"/>
+				<br><br>
+
+				<div id="error_lastName" style="display: none; color: red;">
+					Invalid input for the Last Name field. Only text are allowed.
+					<br><br>
+				</div>
+
+				<label for="emailId">Email Id*:</label>
+				<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" required="required"/>
+				<br><br>
+
+				<div id="error_emailId" style="display: none; color: red;">
+					Invalid input for the Email ID field.
+					<br><br>
+				</div>
+
+				<label for="phoneNumber">Phone Number*:</label>
+				<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required="required"/>
+				<br><br>
+
+				<div id="error_phoneNumber" style="display: none; color: red;">
+					Invalid input for the Phone Number field.
+					<br><br>
+				</div>
+
+				<label for="streetAddress1">Street Address 1*:</label>
+				<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" required="required"/>
+				<br><br>
+
+				<div id="error_streetAddress1" style="display: none; color: red;">
+					Invalid input for the Street Address field.
+					<br><br>
+				</div>
+
+				<label for="streetAddress2">Street Address 2:</label>
+				<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
+				<br><br>
+
+				<label for="city">City*:</label>
+				<input type="text" name="city" id="city" placeholder="city" required="required"/>
+				<br><br>
+
+				<div id="error_city" style="display: none; color: red;">
+					Invalid input for the City field.
+					<br><br>
+				</div>
+
+				<label for="state">State*:</label>
+				<input type="text" name="state" id="state" placeholder="state" required="required"/>
+				<br><br>
+
+				<div id="error_state" style="display: none; color: red;">
+					Invalid input for the State field.
+					<br><br>
+				</div>
+
+				<label for="zipcode">ZipCode*:</label>
+				<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" required="required"/>
+				<br><br>
+
+				<div id="error_zipcode" style="display: none; color: red;">
+					Invalid input for the ZipCode field.
+					<br><br>
+				</div>
+
+				<label for="hear">How did you hear*:</label>
+				<input type='checkbox' name="source" id="facebook" value="Facebook" /> Facebook
+				<input type='checkbox' name="source" id="google" value="Google" /> Google
+				<input type='checkbox' name="source" id="yelp" value="Yelp" /> Yelp
+				<br><br>
+
+				<div id="error_hear" style="display: none; color: red;">
+					Please let us know where did you hear about us.
+					<br><br>
+				</div>
+
+
+				<label for="drink">Choose a Drink:</label>
+				<select name="drinks" id="drinks" onchange="drinkOption()">
+					<option id = "soda" value="Soda">Soda</option>
+					<option id = "coffee" value="Coffee">Coffee</option>
+					<option id = "tea" value="Tea">Tea</option>
+					<option id = "hotcoc" value="Hot Chocolate">Hot Chocolate</option>
+					<option id = "icetc" value="Iced Tea/Coffee">Iced Tea/Coffee</option>
+				</select>
+				<br><br>
+				<div id = "checkBox">
+					<div id="sodaCB">
+						<input id="sodaCBL" type='radio' name="sodaCB" value="Large Soda" onclick="checkBox()" /> Large Soda<br>
+						<input type="text" name="sodaLText" id="sodaLText" placeholder="HDYWY Large Soda"/><br>
+						
+						<input id="sodaCBM" type='radio' name="sodaCB" value="Medium Soda" onclick="checkBox()" /> Medium Soda<br>
+						<input type="text" name="sodaMText" id="sodaMText" placeholder="HDYWY Medium Soda" /><br>
+						
+						<input id="sodaCBS" type='radio' name="sodaCB" value="Small Soda" onclick="checkBox()" /> Small Soda<br>
+						<input type="text" name="sodaSText" id="sodaSText" placeholder="HDYWY Small Soda" /><br>
+					</div>
+					<div id="coffeeCB">
+						<input id="coffeeCBL" type='radio' name="coffeeCB" value="Large Coffee" onclick="checkBox()" /> Large Coffee <br> 
+						<input type="text" name="coffeeLText" id="coffeeLText" placeholder="HDYWY Large Coffee"/><br>
+						
+						<input id="coffeeCBM" type='radio' name="coffeeCB" value="Medium Coffee" onclick="checkBox()" /> Medium Coffee <br>
+						<input type="text" name="coffeeMText" id="coffeeMText" placeholder="HDYWY Medium Coffee"/><br>
+
+						<input id="coffeeCBS" type='radio' name="coffeeCB" value="Small Coffee" onclick="checkBox()" /> Small Coffee <br>
+						<input type="text" name="coffeeSText" id="coffeeSText" placeholder="HDYWY Medium Coffee"/><br>
+
+					</div>
+					<div id="teaCB">
+						<input id="teaCBL" type='radio' name="teaCB" value="Large Tea" onclick="checkBox()" /> Large Tea <br>
+						<input type="text" name="teaLText" id="teaLText" placeholder="HDYWY Large Tea"/><br>
+
+						<input id="teaCBM" type='radio' name="teaCB" value="Medium Tea" onclick="checkBox()" /> Medium Tea<br>
+						<input type="text" name="teaMText" id="teaMText" placeholder="HDYWY Medium Tea"/><br>
+
+						<input id="teaCBS" type='radio' name="teaCB" value="Small Tea" onclick="checkBox()" /> Small Tea<br>
+						<input type="text" name="teaSText" id="teaSText" placeholder="HDYWY Small Tea"/><br>
+					</div>
+					<div id="hotcocCB">
+						<input id="hotcocCBL" type='radio' name="hotcocCB" value="Large Hoco" onclick="checkBox()" /> Large Hoco<br>
+						<input type="text" name="hotcocLText" id="hotcocLText" placeholder="HDYWY Large Hoco"/><br>
+
+						<input id="hotcocCBM" type='radio' name="hotcocCB" value="Medium Hoco" onclick="checkBox()" /> Medium Hoco<br>
+						<input type="text" name="hotcocMText" id="hotcocMText" placeholder="HDYWY Medium Hoco"/><br>
+
+						<input id="hotcocCBS" type='radio' name="hotcocCB" value="Small Hoco" onclick="checkBox()" /> Small Hoco<br>
+						<input type="text" name="hotcocSText" id="hotcocSText" placeholder="HDYWY Small Hoco"/><br>
+					</div>
+					<div id="icetcCB">
+						<input id="icetcCBL" type='radio' name="icetcCB" value="Large Ice Tea/Coffee" onclick="checkBox()" /> Large Ice Tea/Coffee<br>
+						<input type="text" name="icetcLText" id="icetcLText" placeholder="HDYWY Large Ice Tea/Coffee"/><br>
+
+						<input id="icetcCBM" type='radio' name="icetcCB" value="Medium Ice Tea/Coffee" onclick="checkBox()" /> Medium Ice Tea/Coffee<br>
+						<input type="text" name="icetcMText" id="icetcMText" placeholder="HDYWY Medium Ice Tea/Coffee"/><br>
+
+						<input id="icetcCBS" type='radio' name="icetcCB" value="Small Ice Tea/Coffee" onclick="checkBox()" /> Small Ice Tea/Coffee<br>
+						<input type="text" name="icetcSText" id="icetcSText" placeholder="HDYWY Small Ice Tea/Coffee"/><br>
+					</div>
+
+				</div>
+				<div id="error_Drnkopt" style="display: none; color: red;">
+					Please select a Drink (Large/Medium/Small)
+					<br><br>
+				</div>
+				<div id="error_Drnktxt" style="display: none; color: red;">
+					Invalid input for the Drink Text field.
+					<br><br>
+				</div>
+				
+
+				<br><br>
+				<label for="comments">Comments*:</label>
+				<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" required></textarea>
+				<br><br>
+				<div id="error_comments" style="display: none; color: red;">
+					Invalid input for the comment field.
+					<br><br>
+				</div>
+				
+				<input type="Submit">
+				<!--<button onclick="onSubmit_CreateTable()">Submit</button>-->
+				<input type="Reset">
+				<br><br>
+			</form>
+
+
+			<div id="table">
+				<table id="myTable">
+					<th>Title</th>
+					<th>First Name</th>
+					<th>Second Name</th>
+					<th>Email Id</th> 
+					<th>Phone Number</th>
+					<th>Street Address 1</th>
+					<th>Street Address 2</th> 
+					<th>City</th> 
+					<th>State</th>
+					<th>ZipCode</th>
+					<th>How did you hear</th>
+					<th>Choosen Drink</th>
+					<th>Comments</th>
+				</table>
+
+			</div>
+		</main>
+	</div>
+
+	<script src="script.js"></script>>
+
+</body>
+
+</html>
